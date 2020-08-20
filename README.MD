@@ -27,18 +27,17 @@ This is mock application, so we are going to use in memory data store.
     - Hotel Id
     - Hotel Name
     - Location
- 3. Checkout
+ 3. Trip
+    - Trip Id
     - Hotel
     - Checkin Date
     - Checkout Date
     - Price
     - Duration
     - User
- 4. Trip
-    - Trip Id
-    - Checkout
-    - User
-    - Total price
+    
+You may consider that some of these fields are optional to
+reduce the complexity of the application.
 
 ## Services
 
@@ -56,6 +55,21 @@ This should be an iterative process. One checkout/hotel should be added to
 trip at one time.
 
 Optionally after each iteration you should display list of the hotels.
+
+## CLI 
+
+The application should support following operations:
+
+ - users ls
+ - users get --id=<id>
+ - users get --first-name=$first --second-name=$second
+ - users put --first-name=$first ...
+ - hotels ls
+ - hotels put --hotel-name=$name ...
+ - trips ls
+ - trips get --id=$id
+ - trips put --user-id=$id ...
+ - trips delete --id=$id ...
 
 ## Infrastructure
 
