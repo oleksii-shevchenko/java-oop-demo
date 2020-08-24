@@ -7,6 +7,8 @@ import ua.ipt.kpi.hw.infra.List;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+    private static final int DEFAULT_ITERATIONS = 16;
+
     private static class Point {
         private final int x;
         private final int y;
@@ -238,5 +240,34 @@ public class LinkedListTest {
         });
 
         assertEquals(intList, processed);
+    }
+
+    @Test
+    public void equalsTest() {
+        List<Integer> first = new LinkedList<>();
+        List<Integer> second = new LinkedList<>();
+
+        first.add(1);
+        second.add(1);
+
+        first.add(3);
+        second.add(3);
+
+        first.add(-1);
+        second.add(-1);
+
+        assertEquals(first, second);
+        assertEquals(first.hashCode(), second.hashCode());
+
+        first.add(2);
+
+        assertNotEquals(first, second);
+
+        second.add(7);
+
+        first.add(7);
+        second.add(2);
+
+        assertNotEquals(first, second);
     }
 }
