@@ -1,9 +1,9 @@
-# Homework
+# Homework (Week 3)
 
 ## Domain model
 
-You are creating demo for your new customer who is provides different
-services for local travelers. They want you to build an CLI application for
+You are creating a demo application for your new customer who provides different
+services for the local travelers. They want you to build an CLI application for
 their administrators.
 
 This is mock application, so we are going to use in memory data store.
@@ -35,6 +35,7 @@ This is mock application, so we are going to use in memory data store.
     - Price
     - Duration
     - User
+    - Status (Created, Processing, Done)
     
 You may consider that some of these fields are optional to
 reduce the complexity of the application.
@@ -56,7 +57,7 @@ trip at one time.
 
 Optionally after each iteration you should display list of the hotels.
 
-## CLI 
+## CLI (Advanced Task)
 
 The application should support following operations:
 
