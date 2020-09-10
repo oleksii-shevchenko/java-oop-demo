@@ -12,9 +12,16 @@ public class InnerDemo {
         list.add(7);
         list.add(11);
 
+        System.out.println("While Loop");
+
         Iterator<Integer> iterator = list.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
+        }
+
+        System.out.println("Foreach Loop");
+        for (Integer integer : list) {
+            System.out.println(integer);
         }
     }
 }
@@ -107,7 +114,7 @@ class ArrayList<T> implements List<T> {
         }
     }
 
-    public class ArrayListIterator<T> implements Iterator<T> {
+    public class ArrayListIterator<E> implements Iterator<E> {
         private int index;
 
         @Override
@@ -116,9 +123,9 @@ class ArrayList<T> implements List<T> {
         }
 
         @Override
-        public T next() {
+        public E next() {
             if (hasNext()) {
-                return (T) container[index++];
+                return (E) container[index++];
             } else {
                 throw new RuntimeException("Index out of range");
             }

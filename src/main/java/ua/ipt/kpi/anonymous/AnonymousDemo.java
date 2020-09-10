@@ -12,7 +12,7 @@ public class AnonymousDemo {
 
         System.out.println("Staring interaction");
         for (int i = 0; i < 10; i++) {
-            service.get("Simple request [id=" + i + "]", new Callback() {
+            service.computeAsync("Simple request [id=" + i + "]", new Callback() {
                 @Override
                 public void onSuccess(String result) {
                     System.out.println("Success : " + result + " " + sessionId);
@@ -30,7 +30,7 @@ public class AnonymousDemo {
 }
 
 interface Service {
-    void get(String request, Callback callback);
+    void computeAsync(String request, Callback callback);
 }
 
 interface Callback {
@@ -41,7 +41,7 @@ interface Callback {
 
 class RandomService implements Service {
     @Override
-    public void get(String request, Callback callback) {
+    public void computeAsync(String request, Callback callback) {
         CompletableFuture.delayedExecutor(ThreadLocalRandom.current().nextInt(16), TimeUnit.SECONDS)
                 .execute(() -> {
                     if (ThreadLocalRandom.current().nextBoolean()) {
