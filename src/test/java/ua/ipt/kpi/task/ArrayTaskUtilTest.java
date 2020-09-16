@@ -63,7 +63,7 @@ public class ArrayTaskUtilTest {
                 .ints(DEFAULT_LENGTH, 0, limit)
                 .toArray();
 
-        int val = ThreadLocalRandom.current().nextInt(0, 2 * limit);
+        int val = ThreadLocalRandom.current().nextInt(limit, 2 * limit);
         int x = ThreadLocalRandom.current().nextInt(0, DEFAULT_LENGTH);
 
         ints[x] = val;
